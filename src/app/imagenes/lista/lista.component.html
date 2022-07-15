@@ -1,0 +1,73 @@
+<div class="container">
+
+  <div class="container mt-5 fondotop fixed-top">
+
+
+    <div class="row mt-3">
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-3">
+        <select class="form-select rounded-pill" aria-label="Default select example" [(ngModel)]="categoria"   name="categoria">
+          <option selected>Selecciona Una Categoria</option>
+          <option value="science">science</option>
+          <option value="education">education</option>
+          <option value="education">people</option>
+          <option value="feelings">feelings</option>
+          <option value="computer">computer</option>
+          <option value="buildings">buildings</option>
+        </select>
+        <div class="d-grid gap-2 col-6 mx-auto mt-5">
+          <button class="btn fondobtn rounded-pill"  type="button" (click)="buscarCategoria()">Buscar Categoria</button>
+          <br>
+          
+        </div>
+
+
+      </div>
+
+
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6 mt-3">
+
+        <input type="text" class="form-control rounded-pill"  [(ngModel)]="Fq" name="Fq" placeholder="Digite Palabra A Buscar" aria-label="Buscar"
+          aria-describedby="basic-addon1">
+
+          <div class="d-grid gap-2 col-6 mx-auto mt-5">
+          
+            <button class="btn fondobtn2 rounded-pill" type="button" (click)="buscarPorArgumento()">Buscar Argumento</button>
+          </div>
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-12">
+        
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="row mt-5">
+    <div class="col-12 col-sm-12 col-md-6 col-lg-6 text-center" *ngFor="let img of imagenes">
+      <br>
+      <div class="card sombra border-0">
+        <img [src]="img.largeImageURL" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+          <div class="bg-white top">
+            <br>
+            <B>
+              <p style="font-size: 15px !important; " class="text-center">Foto: {{img.user}}
+              </p>
+            </B>
+            <h4>Tags: {{img.tags}}</h4>
+            <p class="card-text"> <i class="fa fa-eye" aria-hidden="true"></i> {{img.views}}</p>
+            <button
+              class="bg-info bg-opacity-10 border border-info border-start-0 border-end-0 rounded-end"><span>Like’s <i
+                  class="fa fa-heart" aria-hidden="true"></i> {{img.likes}} </span></button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
